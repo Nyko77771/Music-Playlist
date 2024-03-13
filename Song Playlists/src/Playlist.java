@@ -10,15 +10,9 @@ import java.util.List;
  */
 public abstract class Playlist {
     
-    private List<Song> playlist;
-    
-    public Playlist(){
-        playlist = new ArrayList<Song>();
-    }
-    
-    abstract Song addSong();
-    abstract String removeSong();
-    abstract String searchSong();
+    abstract Song addSong(Object item);
+    abstract Song removeSong();
+    abstract String searchSong(Object item);
     abstract String printPlaylist();
     abstract int size();
     abstract boolean isEmpty();
