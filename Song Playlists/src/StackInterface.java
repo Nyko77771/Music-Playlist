@@ -11,5 +11,6 @@ public interface StackInterface {
     public void push(Song song);
     public Song pop();
     public int size();
-    
+    public Song peek();
+    public void clear();
 }
