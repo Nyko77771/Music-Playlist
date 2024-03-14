@@ -21,6 +21,10 @@ public class Song {
         this.album = album;     
     }
     
+    public Song(String name, int length, String artist){
+        this(name, length, artist, "Unknown");
+    }
+    
     public Song(String name, int length){
         this(name, length, "Unknown", "Unknown");
     }

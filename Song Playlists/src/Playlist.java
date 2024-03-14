@@ -14,5 +14,6 @@ public abstract class Playlist {
     abstract String printPlaylist();
     abstract int size();
     abstract boolean isEmpty();
-    
+    abstract String repeat(boolean answer);
+    abstract void move(int songIndex, int moveIndex);
 }

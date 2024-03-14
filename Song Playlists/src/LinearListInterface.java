@@ -10,9 +10,9 @@
 public interface LinearListInterface {
     
     public Song get(int index);
-    public void remove(int index);
-    public void add(Song song, int index);
-    public void add(Song song);
+    public String remove(int index);
+    public void add(int index);
+    public void add();
     public void repeat();
     
 }

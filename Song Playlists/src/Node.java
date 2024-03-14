@@ -30,5 +30,19 @@ public class Node {
     public Song getSong() {
         return song;
     }
+
+    protected void setSong(Song song) {
+        this.song = song;
+    }
+
+    protected void setPrev(Node prev) {
+        this.prev = prev;
+    }
+
+    protected void setNext(Node next) {
+        this.next = next;
+    }
+
+    
     
 }

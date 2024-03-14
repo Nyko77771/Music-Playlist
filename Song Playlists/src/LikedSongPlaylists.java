@@ -22,22 +22,22 @@ public class LikedSongPlaylists extends Playlist implements StackInterface{
     
     public boolean isEmpty(){
         return likedSongs.isEmpty();
-    };
+    }
     
     public boolean isFull(){
         return false;    
-    };
+    }
     
     public void push(Song song){
         likedSongs.add(0, song);
-    };
+    }
     
     public Song pop(){
         if(!isEmpty()){
             return likedSongs.remove(0);
         }      
         return null;
-    };
+    }
     
     public int size(){
         
@@ -52,20 +52,20 @@ public class LikedSongPlaylists extends Playlist implements StackInterface{
         }
         
         return count;
-    };
+    }
     
-    public String searchSong(String name){
+    public String searchSong(Song song){
         if(!isEmpty()){
             Iterator i;
             i = likedSongs.iterator();
             while(i.hasNext()){
-                if(i.next().equals(name)){
-                    return "Song "+ name + "found";
+                if(i.next().equals(song)){
+                    return "Song "+ song + "found";
                 }
             }
         }
-        return "Song " + name + "not Found";
-    };
+        return "Song " + song + "not Found";
+    }
     
     public String printPlaylist(){
                 if(!isEmpty()){
@@ -73,10 +73,13 @@ public class LikedSongPlaylists extends Playlist implements StackInterface{
                         return "Song " + likedSongs.get(i) + "/n";
                     }
         }
-        return "Playlist is empty";
-    };
+        return null;
+    }
     
     public Song peek(){
+        if(isEmpty()){
+            return null;
+        }
         return likedSongs.get(0);
     }
     
@@ -88,6 +91,20 @@ public class LikedSongPlaylists extends Playlist implements StackInterface{
             clear();
         }
         return "Playlist cleared";
+    }
+    
+    public String repeat(boolean answer){
+        if(isEmpty()){
+            return "Playlist is empty";
+        } else{
+            if(answer){
+                
+            }
+        }
+    }
+    
+    public void move(int songIndex, int moveIndex){
+        
     }
     
 }
