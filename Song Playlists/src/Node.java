@@ -26,5 +26,9 @@ public class Node {
     public Node getNext() {
         return next;
     }
+
+    public Song getSong() {
+        return song;
+    }
     
 }

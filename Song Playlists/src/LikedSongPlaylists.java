@@ -29,11 +29,14 @@ public class LikedSongPlaylists extends Playlist implements StackInterface{
     };
     
     public void push(Song song){
-        addSong(song);
+        likedSongs.add(0, song);
     };
     
     public Song pop(){
-        return removeSong();
+        if(!isEmpty()){
+            return likedSongs.remove(0);
+        }      
+        return null;
     };
     
     public int size(){
@@ -49,18 +52,6 @@ public class LikedSongPlaylists extends Playlist implements StackInterface{
         }
         
         return count;
-    };
-    
-    protected Song addSong(Object item){
-        likedSongs.add(0,(Song) item);
-        return likedSongs.get(0);
-    };
-    
-    protected Song removeSong(){
-        if(!isEmpty()){
-            return likedSongs.remove(0);
-        }      
-        return null;
     };
     
     public String searchSong(String name){

@@ -12,5 +12,5 @@ public interface StackInterface {
     public Song pop();
     public int size();
     public Song peek();
-    public void clear();
+    public String clear();
 }
