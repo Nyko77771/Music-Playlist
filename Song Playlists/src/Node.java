@@ -41,8 +41,6 @@ public class Node {
 
     protected void setNext(Node next) {
         this.next = next;
-    }
-
-    
+    }  
     
 }

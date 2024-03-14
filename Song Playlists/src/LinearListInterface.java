@@ -13,6 +13,5 @@ public interface LinearListInterface {
     public String remove(int index);
     public void add(int index);
     public void add();
-    public void repeat();
     
 }

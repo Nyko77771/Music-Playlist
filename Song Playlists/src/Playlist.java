@@ -10,7 +10,7 @@ import java.util.List;
  */
 public abstract class Playlist {
     
-    abstract String searchSong(String name);
+    abstract String searchSong(Song song);
     abstract String printPlaylist();
     abstract int size();
     abstract boolean isEmpty();

@@ -14,7 +14,7 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
     private Node last;
     private Node current;
     private int size;
-    private Node newNode;
+    private final Node newNode;
     
     public GeneralPlaylists(){
         head = null;
@@ -24,6 +24,7 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
         newNode = null;
     }
     
+    @Override
     public String searchSong(Song song){
         current = head;
         return searchSong(current,song);
@@ -42,6 +43,7 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
         }
     }
     
+    @Override
     public String printPlaylist(){
         current = head;
         return printPlaylist(current);
@@ -57,14 +59,17 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
         }
     }
     
+    @Override
     public int size(){
         return size;
     }
     
+    @Override
     public boolean isEmpty(){
         return (size == 0);
     }
     
+    @Override
     public Song get(int index){
         
         for(int i=0; i < index; i++){
@@ -77,6 +82,7 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
     
     }
     
+    @Override
     public String remove(int index){
         
         if (index > size){
@@ -102,6 +108,7 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
     
     }
     
+    @Override
     public void add(int index){
 
         newNode();
@@ -127,6 +134,7 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
         }
     }
     
+    @Override
     public void add(){
         
         newNode();
@@ -144,6 +152,7 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
         
     }
     
+    @Override
     public String repeat(boolean answer){
         
         if(isEmpty()){
@@ -162,6 +171,7 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
         }
     }
     
+    @Override
     public void move(int songIndex, int moveIndex){
         if(songIndex > size || songIndex < size || moveIndex > size || moveIndex < size){
             return;
@@ -195,7 +205,7 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
     }
     
     private void newNode(){
-        newNode.getSong().equals(likedSongs.peek());
+        newNode.setSong(likedSongs.peek());
     }
     
 }
