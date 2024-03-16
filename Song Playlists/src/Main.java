@@ -110,7 +110,7 @@ public class Main {
 
     
     //Testing move
-    generalPlaylist.move(4, 2);
+    generalPlaylist.move(1, 2);
     System.out.println(generalPlaylist.printPlaylist());
 
     

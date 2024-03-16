@@ -222,67 +222,43 @@ public class GeneralPlaylists extends Playlist implements LinearListInterface {
         if(!(isEmpty())){
         
         Node movedNode = new Node();
-        current = head;
+        movedNode = head;
         
         for(int i=1; i<songIndex; i++){
-            current = current.getNext();
+            movedNode = movedNode.getNext();
         }
-        movedNode.setSong(current.getSong());
+//        movedNode.setSong(current.getSong());
 //        if(current.getNext() != null){
 //            current.getNext().setPrev(current.getPrev());
 //        }
 //        if(current.getPrev() != null){
 //            current.getPrev().setNext(current.getNext());
 //        }
-        if(current == head){
-            head = current.getNext();
-        } else if(current == last){
-            last = current.getPrev();
-        } else {
 
-            if(current.getPrev() != null){
-                current.getPrev().setNext(current.getNext());
-            } else if(current.getNext() != null){
-                current.getNext().setPrev(current.getPrev());
-//            } else if (current.getPrev() == null){
-//                current.getNext().setPrev(null);
-//            } else {
-//                current.getPrev().setNext(null);
-            }
+        if(movedNode.getPrev() != null){
+            movedNode.getPrev().setNext(movedNode.getNext());
+        } else {
+            head = movedNode.getNext();
+        }
+        if(movedNode.getNext() != null){
+            movedNode.getNext().setPrev(movedNode.getPrev());
+        } else {
+            last = movedNode.getPrev();
         }
         
-        current = head;
+        Node insertNode = head;
+        
         for(int i=1; i<moveIndex; i++){
-            while(current.getNext() != null){
-            current = current.getNext();
-            }
+            insertNode = insertNode.getNext();
         }
-        if(current == head){
-            head.setPrev(movedNode);
-            movedNode.setNext(head);
+        if(insertNode.getPrev() != null){
+            insertNode.getPrev().setNext(movedNode);
+        } else {
+            head = movedNode;
         }
-//        if(current == last){
-//            last.setNext(movedNode);
-//        }
-        
-        
-        
-        if(current.getNext() != null){
-            current.getNext().setPrev(movedNode);
-        }
-        if(current.getPrev() != null){
-            current.setPrev(movedNode);
-        }
-//        if(current == head){
-//            head.setPrev(movedNode);
-//            head = movedNode;
-//        }
-//        if(current == last){
-//            last.setNext(movedNode);
-//            last = movedNode;
-//        }
-        movedNode.setNext(current);
-        movedNode.setPrev(current.getPrev());
+        movedNode.setPrev(insertNode.getPrev());
+        movedNode.setNext(insertNode);
+        insertNode.setPrev(movedNode);
         
         }
         
